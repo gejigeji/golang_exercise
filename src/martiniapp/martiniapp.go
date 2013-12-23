@@ -74,12 +74,12 @@ func main() {
 	m := martini.Classic()
 	m.Get("/favicon.ico", func(){
 	})
+	m.Get("/gejigeji", func() string {
+		return "Hello gejigeji!"
+	})
 	html := htmlGen(m,".")
 	m.Get("/", func() string {
 		return html
-	})
-	m.Get("/gejigeji", func() string {
-		return "Hello gejigeji!"
 	})
 	m.Run()
 }
